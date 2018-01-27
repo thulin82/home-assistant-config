@@ -2,6 +2,7 @@ secrets.yaml
 known_devices.yaml
 .uuid
 .HA_VERSION
+.spotify-token-cache
 *.conf
 tts
 deps

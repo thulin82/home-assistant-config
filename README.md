@@ -5,7 +5,9 @@
 ## Hubs/Gateways
 * 433 mhz: TellStick Znet Lite v2
 * Zwave: TellStick Znet Lite v2
-* Zigbee: Hue Gateway
+* Zigbee: Hue Gateway, Xiaomi Gateway
 
 ## Devices
 Telldus switches (433mhz)
+Trådfri lights (Zigbee)
+Xiaomi Temperature/Humidity Sensors (Zigbee)
