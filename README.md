@@ -8,6 +8,6 @@
 * Zigbee: Hue Gateway, Xiaomi Gateway
 
 ## Devices
-Telldus switches (433mhz)
-Trådfri lights (Zigbee)
-Xiaomi Temperature/Humidity Sensors (Zigbee)
+* Telldus switches (433mhz)
+* Trådfri lights (Zigbee)
+* Xiaomi Temperature/Humidity Sensors (Zigbee)
