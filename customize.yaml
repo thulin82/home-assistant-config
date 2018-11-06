@@ -1,0 +1,54 @@
+  group.all_automations:
+    hidden: false
+    
+  sensor.illumination_7811dcb1ff16:
+    friendly_name: Gateway Ljusstyrka
+  light.gateway_light_7811dcb1ff16:
+    friendly_name: Gateway Lampa
+  sensor.temperature_158d000201d362:
+    friendly_name: Vardagsrum Temperatur
+  sensor.humidity_158d000201d362:
+    friendly_name: Vardagsrum Luftfuktighet
+    icon: mdi:water-percent
+  sensor.temperature_158d0001c2c54c:
+    friendly_name: Uterum Temperatur
+  sensor.humidity_158d0001c2c54c:
+    friendly_name: Uterum Luftfuktighet
+    icon: mdi:water-percent
+  sensor.temperature_158d0001c2c4e4:
+    friendly_name: Sovrum Temperatur
+  sensor.humidity_158d0001c2c4e4:
+    friendly_name: Sovrum Luftfuktighet
+    icon: mdi:water-percent
+  sensor.temperature_158d0001c1c07a:
+    friendly_name: Förråd Temperatur
+  sensor.humidity_158d0001c1c07a:
+    friendly_name: Förråd Luftfuktighet
+    icon: mdi:water-percent
+  sensor.temperature_158d0001c16475:
+    friendly_name: Utomhus Temperatur
+  sensor.humidity_158d0001c16475:
+    friendly_name: Utomhus Luftfuktighet
+    icon: mdi:water-percent
+  binary_sensor.door_window_sensor_158d0002011681:
+    friendly_name: Dörr Ytterdörr
+    icon: mdi:door
+  binary_sensor.door_window_sensor_158d0002277ebf:
+    friendly_name: Dörr Uterum
+    icon: mdi:door
+    
+    
+  switch.fonsterlampa_orange:
+    assumed_state: false
+  switch.fonsterlampa_vit:
+    assumed_state: false
+  switch.golvlampa:
+    assumed_state: false
+  switch.ljusslinga:
+    assumed_state: false
+  switch.kokslampor:
+    assumed_state: false
+    friendly_name: Fönsterlampa Kök
+  switch.sovrum:
+    assumed_state: false
+    friendly_name: Ljusslinga V Sovrum

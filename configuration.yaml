@@ -1,0 +1,123 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: 9
+  unit_system: metric
+  time_zone: Europe/Stockholm
+  customize: !include customize.yaml
+
+frontend:
+  #themes: !include_dir_named themes
+
+config:
+
+ios:
+
+http:
+  ssl_certificate: !secret ssl_cert
+  ssl_key: !secret ssl_key
+  base_url: !secret ssl_url
+
+updater:
+
+discovery:
+
+conversation:
+
+tellduslive:
+
+history:
+  exclude:
+    domains:
+      - sun
+
+recorder:      
+  purge_interval: 2
+  purge_keep_days: 5
+
+logbook:
+
+map:
+
+sun:
+
+# homekit:
+
+sonos:
+  media_player:
+    hosts:
+      - !secret sonos_url1
+      - !secret sonos_url2
+
+#Spotify
+media_player:
+  - platform: spotify
+    client_id: !secret spotify_id
+    client_secret: !secret spotify_secret
+
+
+sensor:
+  - platform: yr
+    name: Weather
+    monitored_conditions:
+      - temperature
+      - symbol
+
+  - platform: command_line
+    name: SSL cert expiry
+    unit_of_measurement: days
+    scan_interval: 10800
+    command: !secret ssl_cmd
+
+  - platform: miflora
+    mac: 'C4:7C:8D:66:1E:59'
+    name: Flower1
+    monitored_conditions:
+      - moisture
+      - temperature
+      - battery
+
+  - platform: miflora
+    mac: 'C4:7C:8D:66:19:5F'
+    name: Flower2
+    monitored_conditions:
+      - moisture
+      - temperature
+      - battery
+
+# Text to speech
+tts:
+  - platform: google
+
+# Zones
+zone:
+  - name: Home
+    latitude: !secret home_latitude
+    longitude: !secret home_longitude
+    radius: 20
+    icon: mdi:home-circle
+
+# Device Tracker
+device_tracker:
+  - platform: netgear
+    host: !secret router_ip
+    username: !secret router_user
+    password: !secret router_pass
+    consider_home: 960
+
+
+# Xiaomi Gateway
+xiaomi_aqara:
+  gateways:
+    - mac: !secret xiaomi_mac
+      key: !secret xiaomi_key
+
+shell_command: 
+  renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"  
+
+
+group: !include_dir_merge_named groups/
+history_graph: !include_dir_merge_named graphs/
+automation: !include_dir_merge_list automations
+script: !include scripts.yaml

@@ -1,0 +1,10 @@
+batt:
+  name: Batteries
+  icon: mdi:battery-charging-40
+  view: no
+  entities:
+    - sensor.vardagsrum_battery_sensor
+    - sensor.uterum_battery_sensor
+    - sensor.sovrum_battery_sensor
+    - sensor.flower1_battery
+    - sensor.flower2_battery

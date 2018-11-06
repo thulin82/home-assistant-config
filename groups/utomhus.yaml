@@ -1,0 +1,12 @@
+utomhus:
+  name: Utomhus
+  icon: mdi:floor-plan
+  view: no
+  entities:
+    - sensor.temperature_158d0001c16475
+    - sensor.humidity_158d0001c16475
+    - binary_sensor.door_window_sensor_158d0002011681
+    - sensor.flower1_moisture
+    - sensor.flower1_temperature
+    - sensor.flower2_moisture
+    - sensor.flower2_temperature

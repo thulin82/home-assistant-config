@@ -2,6 +2,8 @@ secrets.yaml
 known_devices.yaml
 .uuid
 .HA_VERSION
+.storage
+.ps4-wake.credentials.json
 .spotify-token-cache
 *.conf
 tts

@@ -1,0 +1,9 @@
+uterum:
+  name: Uterum
+  icon: mdi:lightbulb-on-outline
+  view: no
+  entities:
+    - sensor.temperature_158d0001c2c54c
+    - sensor.humidity_158d0001c2c54c
+    - sensor.temperature_158d0001c1c07a
+    - sensor.humidity_158d0001c1c07a

@@ -1,0 +1,18 @@
+  - alias: Renew SSL Cert
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.ssl_cert_expiry
+      below: 19
+    action:
+      service: shell_command.renew_ssl
+
+  - alias: SSL expiry notification
+    trigger:
+      platform: numeric_state
+      entity_id: sensor.ssl_cert_expiry
+      below: 10
+    action:
+      service: notify.ios_iphone
+      data:
+        title: 'SSL Renewal Error'
+        message: 'Warning - SSL certificate expires in 10 days and has not been automatically renewed'

@@ -1,0 +1,6 @@
+batteries:
+  name: Batteries
+  icon: mdi:battery-charging-40
+  view: yes
+  entities:
+    - group.batt

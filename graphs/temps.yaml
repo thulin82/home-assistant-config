@@ -1,0 +1,8 @@
+temps:
+  name: Temperatures
+  entities:
+    - sensor.temperature_158d0001c2c4e4
+    - sensor.temperature_158d000201d362
+    - sensor.temperature_158d0001c1c07a
+  hours_to_show: 144
+  refresh: 600

@@ -1,0 +1,6 @@
+automations:
+  name: Automations
+  icon: mdi:auto-fix
+  view: yes
+  entities:
+    - group.all_automations
