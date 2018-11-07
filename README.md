@@ -1,6 +1,6 @@
-# Home Assistant Configuration
-* Running Hassbian Stretch on a Raspberry Pi with a 16 GB SD card
-* Using Homebridge to get support for Homekit and Siri
+# [Home Assistant Config](https://github.com/thulin82/home-assistant-config)
+[![Build Status](https://travis-ci.org/thulin82/home-assistant-config.svg?branch=master)](https://travis-ci.org/thulin82/home-assistant-config)
+* Running Hassbian Stretch on a Raspberry Pi 3 with a 16 GB SD card
 
 ## Hubs/Gateways
 * 433 mhz: TellStick Znet Lite v2
