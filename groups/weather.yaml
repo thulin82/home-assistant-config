@@ -6,3 +6,4 @@ weather:
     - sensor.weather_symbol_sensor
     - sensor.weather_temperature
     - sun.sun
+    - weather.smhi_home
