@@ -1,6 +1,6 @@
   group.all_automations:
     hidden: false
-    
+
   sensor.illumination_7811dcb1ff16:
     friendly_name: Gateway Ljusstyrka
   light.gateway_light_7811dcb1ff16:
@@ -52,3 +52,6 @@
   switch.sovrum:
     assumed_state: false
     friendly_name: Ljusslinga V Sovrum
+  switch.brytare7:
+    assumed_state: false
+    friendly_name: Ljusslinga H Sovrum

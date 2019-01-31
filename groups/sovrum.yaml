@@ -5,3 +5,5 @@ sovrum:
   entities:
     - sensor.temperature_158d0001c2c4e4
     - sensor.humidity_158d0001c2c4e4
+    - switch.sovrum
+    - switch.brytare7

@@ -12,6 +12,16 @@
         - switch.ljusslinga
         - switch.kokslampor
         - switch.sovrum
+        - switch.brytare7
+
+  - alias: Slack ljus vid 20:00
+    trigger:
+      platform: time
+      at: '20:00:00'
+    action:
+      service: homeassistant.turn_off
+      entity_id:
+        - switch.brytare7
 
   - alias: Slack ljus vid midnatt
     trigger:
