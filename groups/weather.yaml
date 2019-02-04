@@ -3,7 +3,4 @@ weather:
   icon: mdi:thermometer
   view: no
   entities:
-    - sensor.weather_symbol_sensor
-    - sensor.weather_temperature
-    - sun.sun
     - weather.smhi_skurup
