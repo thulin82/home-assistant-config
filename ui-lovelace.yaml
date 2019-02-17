@@ -1,5 +1,5 @@
 resources:
-  - url: /local/mini-graph-card-bundle.js?v=0.2.2
+  - url: /local/mini-graph-card-bundle.js?v=0.2.4
     type: module
   - url: /local/mini-media-player-bundle.js?v=1.0.1
     type: module
@@ -32,8 +32,11 @@ views:
               - type: custom:mini-graph-card
                 name: Temp Uterum
                 height: 75
-                entities: sensor.temperature_158d0001c2c54c
-                line_color_above:
+                show:
+                  fill: fade
+                entities:
+                  - sensor.temperature_158d0001c2c54c
+                color_thresholds:
                   - value: 0
                     color: blue
                   - value: 22
@@ -43,8 +46,11 @@ views:
               - type: custom:mini-graph-card
                 name: Luftfuktighet Uterum
                 height: 75
-                entities: sensor.humidity_158d0001c2c54c
-                line_color_above:
+                show:
+                  fill: fade
+                entities:
+                  - sensor.humidity_158d0001c2c54c
+                color_thresholds:
                   - value: 0
                     color: blue
                   - value: 20
@@ -56,8 +62,11 @@ views:
               - type: custom:mini-graph-card
                 name: Temp Förråd
                 height: 75
-                entities: sensor.temperature_158d0001c1c07a
-                line_color_above:
+                show:
+                  fill: fade
+                entities:
+                  - sensor.temperature_158d0001c1c07a
+                color_thresholds:
                   - value: 0
                     color: blue
                   - value: 22
@@ -67,8 +76,11 @@ views:
               - type: custom:mini-graph-card
                 name: Luftfuktighet Förråd
                 height: 75
-                entities: sensor.humidity_158d0001c1c07a
-                line_color_above:
+                show:
+                  fill: fade
+                entities:
+                  - sensor.humidity_158d0001c1c07a
+                color_thresholds:
                   - value: 0
                     color: blue
                   - value: 20
@@ -94,8 +106,11 @@ views:
           - type: custom:mini-graph-card
             name: Temp Sovrum
             height: 75
-            entities: sensor.temperature_158d0001c2c4e4
-            line_color_above:
+            show:
+                  fill: fade
+            entities:
+              - sensor.temperature_158d0001c2c4e4
+            color_thresholds:
               - value: 0
                 color: blue
               - value: 22
@@ -105,8 +120,11 @@ views:
           - type: custom:mini-graph-card
             name: Luftfuktighet Sovrum
             height: 75
-            entities: sensor.humidity_158d0001c2c4e4
-            line_color_above:
+            show:
+                  fill: fade
+            entities:
+              - sensor.humidity_158d0001c2c4e4
+            color_thresholds:
               - value: 0
                 color: blue
               - value: 20
