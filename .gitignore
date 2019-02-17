@@ -9,6 +9,6 @@ known_devices.yaml
 tts
 deps
 www
-custom_components
+custom_components/__pycache__/
 home-assistant.log
 home-assistant_v2.db
