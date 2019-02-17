@@ -8,9 +8,22 @@ homeassistant:
   customize: !include customize.yaml
 
 frontend:
+  javascript_version: latest
   #themes: !include_dir_named themes
 
+lovelace:
+  mode: yaml
+
 config:
+
+system_health:
+
+custom_updater:
+  track:
+    - cards
+  card_urls:
+    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
+    - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
 
 ios:
 
@@ -50,13 +63,6 @@ sonos:
       - !secret sonos_url1
       - !secret sonos_url2
 
-#Spotify
-media_player:
-  - platform: spotify
-    client_id: !secret spotify_id
-    client_secret: !secret spotify_secret
-
-
 sensor:
   - platform: yr
     name: Weather
@@ -86,6 +92,7 @@ sensor:
       - temperature
       - battery
 
+
 # Text to speech
 tts:
   - platform: google
@@ -114,10 +121,10 @@ xiaomi_aqara:
       key: !secret xiaomi_key
 
 shell_command: 
-  renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges tls-sni-01 --tls-sni-01-port 8123 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"  
+  renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"
 
 
-group: !include_dir_merge_named groups/
-history_graph: !include_dir_merge_named graphs/
+#group: !include_dir_merge_named groups/
+#history_graph: !include_dir_merge_named graphs/
 automation: !include_dir_merge_list automations
 script: !include scripts.yaml
