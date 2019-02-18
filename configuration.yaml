@@ -124,7 +124,5 @@ shell_command:
   renew_ssl: ~/certbot/certbot-auto renew --quiet --no-self-upgrade --standalone --preferred-challenges http-01 --pre-hook "sudo systemctl stop home-assistant@homeassistant.service" --post-hook "sudo systemctl start home-assistant@homeassistant.service"
 
 
-#group: !include_dir_merge_named groups/
-#history_graph: !include_dir_merge_named graphs/
 automation: !include_dir_merge_list automations
 script: !include scripts.yaml

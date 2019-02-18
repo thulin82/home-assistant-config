@@ -1,8 +1,0 @@
-markus:
-  name: Övrigt
-  icon: mdi:account-circle
-  view: no
-  entities:
-    - device_tracker.iphone
-    - sensor.ssl_cert_expiry
-    - updater.updater

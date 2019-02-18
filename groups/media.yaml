@@ -1,6 +1,0 @@
-media:
-  name: Media
-  view: no
-  entities:
-    - media_player.vardagsrum
-    - media_player.kok

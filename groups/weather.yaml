@@ -1,6 +1,0 @@
-weather:
-  name: Väder
-  icon: mdi:thermometer
-  view: no
-  entities:
-    - weather.smhi_skurup
