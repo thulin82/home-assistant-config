@@ -1,8 +1,10 @@
 resources:
-  - url: /local/mini-graph-card-bundle.js?v=0.2.4
+  - url: /customcards/mini-graph-card-bundle.js
     type: module
-  - url: /local/mini-media-player-bundle.js?v=1.0.1
+  - url: /customcards/mini-media-player-bundle.js
     type: module
+  - url: /customcards/tracker-card.js
+    type: js
 
 title: Home
 views:
@@ -152,6 +154,11 @@ views:
           - sensor.ssl_cert_expiry
           - sensor.custom_card_tracker
           - updater.updater
+
+      - type: custom:tracker-card
+        trackers:
+          - sensor.custom_card_tracker
+          - sensor.custom_component_tracker
 
       - type: weather-forecast
         entity: weather.smhi_skurup
