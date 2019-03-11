@@ -1,7 +1,7 @@
 resources:
-  - url: /customcards/mini-graph-card-bundle.js
+  - url: /customcards/mini-graph-card-bundle.js?track=true
     type: module
-  - url: /customcards/mini-media-player-bundle.js
+  - url: /customcards/mini-media-player-bundle.js?track=true
     type: module
   - url: /customcards/tracker-card.js?track=true
     type: module
