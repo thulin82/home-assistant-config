@@ -205,7 +205,7 @@ views:
           - automation.slack_xaoimi_gateway_rgb
           - automation.ssl_expiry_notification
           - automation.styr_xaoimi_gateway_rgb
-          - automation.tand_ljus_60_min_innan_solnedgang
+          - automation.tand_ljus_19_00
 
   - title: Batteries
     icon: mdi:battery-charging-40

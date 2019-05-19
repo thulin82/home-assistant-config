@@ -27,6 +27,8 @@ custom_updater:
 
 ios:
 
+mobile_app:
+
 http:
   ssl_certificate: !secret ssl_cert
   ssl_key: !secret ssl_key
@@ -95,7 +97,8 @@ sensor:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 # Zones
 zone:
