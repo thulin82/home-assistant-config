@@ -49,7 +49,6 @@
         - switch.golvlampa
         - switch.ljusslinga
         - switch.kokslampor
-        - switch.sovrum
 
   - alias: Slack ljus vid 01:00
     trigger:

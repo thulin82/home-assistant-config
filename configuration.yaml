@@ -94,6 +94,34 @@ sensor:
       - temperature
       - battery
 
+  - platform: template
+    sensors:
+      button1_battery:
+        friendly_name: 'Knapp 1'
+        value_template: "{{ states.binary_sensor.switch_158d000288c41c.attributes.battery_level }}"
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-70
+      button2_battery:
+        friendly_name: 'Knapp 2'
+        value_template: "{{ states.binary_sensor.switch_158d00028a6f95.attributes.battery_level }}"
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-70
+      button3_battery:
+        friendly_name: 'Knapp 3'
+        value_template: "{{ states.binary_sensor.switch_158d00029012ef.attributes.battery_level }}"
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-70
+      door1_battery:
+        friendly_name: 'Dörr Ytterdörr'
+        value_template: "{{ states.binary_sensor.door_window_sensor_158d0002011681.attributes.battery_level }}"
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-70
+      door2_battery:
+        friendly_name: 'Dörr Uterum'
+        value_template: "{{ states.binary_sensor.door_window_sensor_158d0002277ebf.attributes.battery_level }}"
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-70
+
 
 # Text to speech
 tts:
