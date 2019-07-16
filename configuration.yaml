@@ -78,22 +78,6 @@ sensor:
     scan_interval: 10800
     command: !secret ssl_cmd
 
-  - platform: miflora
-    mac: 'C4:7C:8D:66:1E:59'
-    name: Flower1
-    monitored_conditions:
-      - moisture
-      - temperature
-      - battery
-
-  - platform: miflora
-    mac: 'C4:7C:8D:66:19:5F'
-    name: Flower2
-    monitored_conditions:
-      - moisture
-      - temperature
-      - battery
-
   - platform: template
     sensors:
       button1_battery:
@@ -119,6 +103,26 @@ sensor:
       door2_battery:
         friendly_name: 'Dörr Uterum'
         value_template: "{{ states.binary_sensor.door_window_sensor_158d0002277ebf.attributes.battery_level }}"
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-70
+      forrad_temp_battery:
+        friendly_name: 'Förråd Temp'
+        value_template: "{{ states.sensor.temperature_158d0001c1c07a.attributes.battery_level }}"
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-70
+      sovrum_temp_battery:
+        friendly_name: 'Sovrum Temp'
+        value_template: "{{ states.sensor.temperature_158d0001c2c4e4.attributes.battery_level }}"
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-70
+      uterum_temp_battery:
+        friendly_name: 'Uterum Temp'
+        value_template: "{{ states.sensor.temperature_158d0001c2c54c.attributes.battery_level }}"
+        unit_of_measurement: '%'
+        icon_template: mdi:battery-70
+      vardagsrum_temp_battery:
+        friendly_name: 'Vardagsrum Temp'
+        value_template: "{{ states.sensor.temperature_158d000201d362.attributes.battery_level }}"
         unit_of_measurement: '%'
         icon_template: mdi:battery-70
 
