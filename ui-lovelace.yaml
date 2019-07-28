@@ -169,9 +169,18 @@ views:
         show_header_toggle: false
         entities:
           - device_tracker.iphone_2
-          - sensor.ssl_cert_expiry
           - sun.sun
           - updater.updater
+
+      - type: gauge
+        name: SSL Cert Expiry
+        entity: sensor.ssl_cert_expiry
+        min: 0
+        max: 90
+        severity:
+          green: 45
+          yellow: 20
+          red: 0
 
       - type: custom:tracker-card
 
