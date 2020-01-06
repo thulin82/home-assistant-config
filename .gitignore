@@ -10,5 +10,6 @@ tts
 deps
 www
 custom_components/__pycache__/
+custom_components/hacs/
 home-assistant.log
 home-assistant_v2.db

@@ -18,13 +18,6 @@ config:
 
 system_health:
 
-custom_updater:
-  track:
-    - cards
-  card_urls:
-    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
-    - https://raw.githubusercontent.com/kalkih/mini-graph-card/master/tracker.json
-
 ios:
 
 mobile_app:
@@ -59,6 +52,10 @@ sun:
 
 # homekit:
 
+cast:
+  media_player:
+    - host: !secret chromecast_url
+
 sonos:
   media_player:
     hosts:
@@ -71,6 +68,25 @@ sensor:
     monitored_conditions:
       - temperature
       - symbol
+
+  - platform: trafikverket_train
+    api_key: !secret trafikverket
+    trains:
+
+    - name: "Morning"
+      from: Skurup
+      to: Triangeln
+      time: "12:17"
+
+    - name: "Afternoon train to Skurup"
+      from: Triangeln
+      to: Skurup
+      time: "16:40"
+
+    - name: "Morning train to Malmo"
+      from: Skurup
+      to: Triangeln
+      time: "07:47"
 
   - platform: command_line
     name: SSL cert expiry

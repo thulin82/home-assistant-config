@@ -47,6 +47,6 @@
   switch.sovrum:
     assumed_state: false
     friendly_name: Ljusslinga V Sovrum
-  switch.brytare7:
+  switch.brytare8:
     assumed_state: false
     friendly_name: Ljusslinga H Sovrum

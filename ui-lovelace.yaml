@@ -1,9 +1,7 @@
 resources:
-  - url: /customcards/mini-graph-card-bundle.js?track=true
+  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
     type: module
-  - url: /customcards/mini-media-player-bundle.js?track=true
-    type: module
-  - url: /customcards/tracker-card.js?track=true
+  - url: /community_plugin/mini-media-player/mini-media-player-bundle.js
     type: module
 
 title: Home
@@ -128,7 +126,7 @@ views:
             tap_action:
               action: toggle
           - type: picture-entity
-            entity: switch.brytare7
+            entity: switch.brytare8
             image: /local/ljusslinga.jpg
             tap_action:
               action: toggle
@@ -170,7 +168,14 @@ views:
         entities:
           - device_tracker.iphone_2
           - sun.sun
-          - updater.updater
+          - binary_sensor.updater
+
+      - type: entities
+        title: Tåg
+        show_header_toggle: false
+        entities:
+          # - sensor.morning_train_to_malmo
+          - sensor.afternoon_train_to_skurup
 
       - type: gauge
         name: SSL Cert Expiry
@@ -182,7 +187,11 @@ views:
           yellow: 20
           red: 0
 
-      - type: custom:tracker-card
+      - type: entities
+        title: HACS
+        show_header_toggle: false
+        entities:
+          - sensor.hacs
 
       - type: weather-forecast
         entity: weather.smhi_skurup
@@ -200,6 +209,14 @@ views:
       - type: custom:mini-media-player
         entity: media_player.vardagsrum
         name: Vardagsrum
+        artwork: cover
+        source: icon
+        hide:
+          shuffle: true
+          
+      - type: custom:mini-media-player
+        entity: media_player.vardagsrum_2
+        name: Vardagsrum-ChromeCast
         artwork: cover
         source: icon
         hide:
@@ -233,7 +250,7 @@ views:
           - automation.slack_xaoimi_gateway_rgb
           - automation.ssl_expiry_notification
           - automation.styr_xaoimi_gateway_rgb
-          - automation.tand_ljus_19_00
+          - automation.tand_ljus_60_min_innan_solnedgang
 
   - title: Batteries
     icon: mdi:battery-charging-40
@@ -244,8 +261,6 @@ views:
         title: Batteries
         show_header_toggle: false
         entities:
-          - sensor.flower1_battery
-          - sensor.flower2_battery
           - sensor.door1_battery
           - sensor.door2_battery
           - sensor.button1_battery

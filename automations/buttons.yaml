@@ -1,0 +1,10 @@
+  - alias: Light Christmas Tree
+    trigger:
+      platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d000288c41c
+        click_type: single
+    action:
+      service: switch.toggle
+      entity_id: switch.brytare9
