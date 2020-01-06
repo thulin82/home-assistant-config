@@ -15,6 +15,7 @@ before_install:
   - touch privkey.pem
 install:
   - pip3 install homeassistant
+  - pip3 install netdisco #workaround for now
   - hass --version
 script:
   - hass -c . --script check_config
