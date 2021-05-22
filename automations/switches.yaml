@@ -1,23 +1,8 @@
-  - alias: Tand ljus 60 min innan solnedgang
-    trigger:
-      platform: sun
-      event: sunset
-      offset: '-01:00:00'
-    action:
-      service: homeassistant.turn_on
-      entity_id:
-        - switch.fonsterlampa_orange
-        - switch.fonsterlampa_vit
-        - switch.golvlampa
-        - switch.ljusslinga
-        - switch.kokslampor
-        - switch.sovrum
-        - switch.brytare8
-
-  # - alias: Tand ljus 19:00
+  # - alias: Tand ljus 60 min innan solnedgang
     # trigger:
-      # platform: time
-      # at: '19:00:00'
+      # platform: sun
+      # event: sunset
+      # offset: '-01:00:00'
     # action:
       # service: homeassistant.turn_on
       # entity_id:
@@ -28,6 +13,21 @@
         # - switch.kokslampor
         # - switch.sovrum
         # - switch.brytare8
+
+  - alias: Tand ljus vid 19:30
+    trigger:
+      platform: time
+      at: '19:30:00'
+    action:
+      service: homeassistant.turn_on
+      entity_id:
+        - switch.fonsterlampa_orange
+        - switch.fonsterlampa_vit
+        - switch.golvlampa
+        - switch.ljusslinga
+        - switch.kokslampor
+        - switch.sovrum
+        - switch.brytare8
 
   - alias: Slack ljus vid 20:00
     trigger:
