@@ -1,9 +1,3 @@
-resources:
-  - url: /community_plugin/mini-graph-card/mini-graph-card-bundle.js
-    type: module
-  - url: /community_plugin/mini-media-player/mini-media-player-bundle.js
-    type: module
-
 title: Home
 views:
   - title: Home
@@ -166,7 +160,7 @@ views:
         title: Övrigt
         show_header_toggle: false
         entities:
-          - device_tracker.iphone_2
+          - person.markus
           - sun.sun
           - binary_sensor.updater
 
@@ -174,8 +168,8 @@ views:
         title: Tåg
         show_header_toggle: false
         entities:
-          # - sensor.morning_train_to_malmo
           - sensor.afternoon_train_to_skurup
+          - sensor.morning_train_to_malmo
 
       - type: gauge
         name: SSL Cert Expiry
@@ -206,25 +200,35 @@ views:
           - sensor.temperature_158d0001c1c07a
           - sensor.temperature_158d0001c2c54c
 
-      - type: custom:mini-media-player
-        entity: media_player.vardagsrum
-        name: Vardagsrum
-        artwork: cover
-        source: icon
-        hide:
-          shuffle: true
-          
+      - type: vertical-stack
+        cards:
+        - type: custom:mini-media-player
+          entity: media_player.vardagsrum
+          name: Vardagsrum
+          artwork: cover
+          source: icon
+          hide:
+            shuffle: true
+
+        - type: custom:mini-media-player
+          entity: media_player.kok
+          name: Kök
+          artwork: cover
+          source: icon
+          hide:
+            shuffle: true
+
+        - type: custom:mini-media-player
+          entity: media_player.uterum_v
+          name: Uterum
+          artwork: cover
+          source: icon
+          hide:
+            shuffle: true
+
       - type: custom:mini-media-player
         entity: media_player.vardagsrum_2
         name: Vardagsrum-ChromeCast
-        artwork: cover
-        source: icon
-        hide:
-          shuffle: true
-
-      - type: custom:mini-media-player
-        entity: media_player.kok
-        name: Kök
         artwork: cover
         source: icon
         hide:
@@ -236,7 +240,7 @@ views:
     background: radial-gradient(crimson, skyblue)
     cards:
       - type: entities
-        title: Batteries
+        title: Automations
         show_header_toggle: false
         entities:
           - automation.hass_new_device_tracked
@@ -247,10 +251,10 @@ views:
           - automation.slack_ljus_vid_01_00
           - automation.slack_ljus_vid_20_00
           - automation.slack_ljus_vid_midnatt
-          - automation.slack_xaoimi_gateway_rgb
+          - automation.nattlampa_xaoimi_gateway_rgb
           - automation.ssl_expiry_notification
-          - automation.styr_xaoimi_gateway_rgb
-          - automation.tand_ljus_60_min_innan_solnedgang
+          - automation.slack_xaoimi_gateway_rgb
+          - automation.tand_ljus_vid_19_30
 
   - title: Batteries
     icon: mdi:battery-charging-40
