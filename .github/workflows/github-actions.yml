@@ -20,7 +20,7 @@ jobs:
               uses: actions/setup-python@v2
               with:
                   python-version: ${{ matrix.python-version }}
-            - run: mv travis_secrets.yml secrets.yml
+            - run: mv .travis_secrets.yaml secrets.yaml
             - name: Check HA config
               uses: kpucynski/action-ha-config-check@master
               with:
