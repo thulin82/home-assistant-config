@@ -21,6 +21,8 @@ jobs:
               with:
                   python-version: ${{ matrix.python-version }}
             - run: mv .travis_secrets.yaml secrets.yaml
+            - run: touch fullchain.pem
+            - run: touch privkey.pem
             - name: Check HA config
               uses: kpucynski/action-ha-config-check@master
               with:
