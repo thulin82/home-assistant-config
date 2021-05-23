@@ -17,11 +17,11 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Set up Python ${{ matrix.python-version }}
-            - run: mv travis_secrets.yml secrets.yml
               uses: actions/setup-python@v2
               with:
                   python-version: ${{ matrix.python-version }}
+            - run: mv travis_secrets.yml secrets.yml
             - name: Check HA config
-            - uses: kpucynski/action-ha-config-check@master
+              uses: kpucynski/action-ha-config-check@master
               with:
                   ha_version: 'latest'
