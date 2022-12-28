@@ -1,10 +1,12 @@
-  - alias: Light Christmas Tree
+  - alias: Tand tv-rum
     trigger:
       platform: event
-      event_type: xiaomi_aqara.click
+      event_type: deconz_event
       event_data:
-        entity_id: binary_sensor.switch_158d000288c41c
-        click_type: single
+        id: switch_c41c
+        event: 1002
     action:
       service: switch.toggle
-      entity_id: switch.brytare9
+      entity_id:
+        - switch.fonsterlampa_vit
+        - switch.fonsterlampa_orange

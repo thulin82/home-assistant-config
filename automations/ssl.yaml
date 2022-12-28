@@ -12,7 +12,7 @@
       entity_id: sensor.ssl_cert_expiry
       below: 10
     action:
-      service: notify.ios_iphone
+      service: notify.mobile_app_iphone
       data:
         title: 'SSL Renewal Error'
         message: 'Warning - SSL certificate expires in 10 days and has not been automatically renewed'

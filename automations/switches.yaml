@@ -8,35 +8,19 @@
       # entity_id:
         # - switch.fonsterlampa_orange
         # - switch.fonsterlampa_vit
-        # - switch.golvlampa
         # - switch.ljusslinga
         # - switch.kokslampor
-        # - switch.sovrum
         # - switch.brytare8
+        # - switch.brytare9
 
-  - alias: Tand ljus vid 19:30
+  - alias: Tand ljus vid 19:15
     trigger:
       platform: time
-      at: '19:30:00'
+      at: '19:15:00'
     action:
       service: homeassistant.turn_on
       entity_id:
-        - switch.fonsterlampa_orange
-        - switch.fonsterlampa_vit
-        - switch.golvlampa
-        - switch.ljusslinga
-        - switch.kokslampor
-        - switch.sovrum
-        - switch.brytare8
-
-  - alias: Slack ljus vid 20:00
-    trigger:
-      platform: time
-      at: '20:00:00'
-    action:
-      service: homeassistant.turn_off
-      entity_id:
-        - switch.brytare8
+        - switch.brytare6
 
   - alias: Slack ljus vid midnatt
     trigger:
@@ -46,9 +30,10 @@
       service: homeassistant.turn_off
       entity_id:
         - switch.fonsterlampa_vit
-        - switch.golvlampa
         - switch.ljusslinga
         - switch.kokslampor
+        - switch.brytare8
+        - switch.brytare9
 
   - alias: Slack ljus vid 01:00
     trigger:
@@ -58,3 +43,12 @@
       service: homeassistant.turn_off
       entity_id:
         - switch.fonsterlampa_orange
+        
+  - alias: Slack ljus vid 07:00
+    trigger:
+      platform: time
+      at: '07:00:00'
+    action:
+      service: homeassistant.turn_off
+      entity_id:
+        - switch.brytare6

@@ -9,14 +9,9 @@ views:
         show_header_toggle: true
         entities:
           - switch.fonsterlampa_orange
-          - switch.fonsterlampa_vit
-          - switch.golvlampa
-          - switch.ljusslinga
-          - switch.kokslampor
-          - light.gateway_light_7811dcb1ff16
-          - sensor.illumination_7811dcb1ff16
-          - binary_sensor.door_window_sensor_158d0002277ebf
-          - binary_sensor.door_window_sensor_158d0002011681
+          - switch.brytare8
+          - binary_sensor.openclose_dorr1
+          - binary_sensor.openclose_dorr2
 
       - type: horizontal-stack
         cards:
@@ -26,7 +21,7 @@ views:
             show:
                   fill: fade
             entities:
-              - sensor.temperature_158d000201d362
+              - sensor.temperatur_vardagsrum
             color_thresholds:
               - value: 0
                 color: "#0000FF"
@@ -40,7 +35,7 @@ views:
             show:
                   fill: fade
             entities:
-              - sensor.humidity_158d000201d362
+              - sensor.temperatur_vardagsrum_2
             color_thresholds:
               - value: 0
                 color: "#0000FF"
@@ -59,7 +54,7 @@ views:
                 show:
                   fill: fade
                 entities:
-                  - sensor.temperature_158d0001c2c54c
+                  - sensor.temperatur_uterum
                 color_thresholds:
                   - value: 0
                     color: "#0000FF"
@@ -73,7 +68,7 @@ views:
                 show:
                   fill: fade
                 entities:
-                  - sensor.humidity_158d0001c2c54c
+                  - sensor.temperatur_uterum_2
                 color_thresholds:
                   - value: 0
                     color: "#0000FF"
@@ -89,7 +84,7 @@ views:
                 show:
                   fill: fade
                 entities:
-                  - sensor.temperature_158d0001c1c07a
+                  - sensor.temperatur_forrad
                 color_thresholds:
                   - value: 0
                     color: "#0000FF"
@@ -103,7 +98,38 @@ views:
                 show:
                   fill: fade
                 entities:
-                  - sensor.humidity_158d0001c1c07a
+                  - sensor.temperatur_forrad_2
+                color_thresholds:
+                  - value: 0
+                    color: "#0000FF"
+                  - value: 20
+                    color: "#00FF00"
+                  - value: 40
+                    color: "#FF0000"
+
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                name: Temp Sovrum
+                height: 75
+                show:
+                      fill: fade
+                entities:
+                  - sensor.temperatur_sovrum
+                color_thresholds:
+                  - value: 0
+                    color: "#0000FF"
+                  - value: 22
+                    color: "#00FF00"
+                  - value: 25
+                    color: "#FF0000"
+              - type: custom:mini-graph-card
+                name: Luftfuktighet Sovrum
+                height: 75
+                show:
+                      fill: fade
+                entities:
+                  - sensor.temperatur_sovrum_2
                 color_thresholds:
                   - value: 0
                     color: "#0000FF"
@@ -115,46 +141,28 @@ views:
       - type: horizontal-stack
         cards:
           - type: picture-entity
-            entity: switch.sovrum
-            image: /local/ljusslinga.jpg
+            entity: switch.brytare6
+            image: /local/nightlight.jpg
             tap_action:
               action: toggle
           - type: picture-entity
-            entity: switch.brytare8
+            entity: switch.ljusslinga
             image: /local/ljusslinga.jpg
             tap_action:
               action: toggle
-
+              
       - type: horizontal-stack
         cards:
-          - type: custom:mini-graph-card
-            name: Temp Sovrum
-            height: 75
-            show:
-                  fill: fade
-            entities:
-              - sensor.temperature_158d0001c2c4e4
-            color_thresholds:
-              - value: 0
-                color: "#0000FF"
-              - value: 22
-                color: "#00FF00"
-              - value: 25
-                color: "#FF0000"
-          - type: custom:mini-graph-card
-            name: Luftfuktighet Sovrum
-            height: 75
-            show:
-                  fill: fade
-            entities:
-              - sensor.humidity_158d0001c2c4e4
-            color_thresholds:
-              - value: 0
-                color: "#0000FF"
-              - value: 20
-                color: "#00FF00"
-              - value: 40
-                color: "#FF0000"
+          - type: picture-entity
+            entity: switch.kokslampor
+            image: /local/windowlight.jpg
+            tap_action:
+              action: toggle
+          - type: picture-entity
+            entity: switch.fonsterlampa_vit
+            image: /local/floorlight.png
+            tap_action:
+              action: toggle
 
       - type: entities
         title: Övrigt
@@ -162,14 +170,17 @@ views:
         entities:
           - person.markus
           - sun.sun
-          - binary_sensor.updater
+          - sensor.postnord_delivery_27431
+          - binary_sensor.home_assistant_versions_update_available
+          - sensor.home_assistant_versions
+          - sensor.hacs
 
       - type: entities
         title: Tåg
         show_header_toggle: false
         entities:
-          - sensor.afternoon_train_to_skurup
-          - sensor.morning_train_to_malmo
+          - sensor.skurup_to_hyllie_at_07_17
+          - sensor.hyllie_to_skurup_at_16_45
 
       - type: gauge
         name: SSL Cert Expiry
@@ -181,24 +192,18 @@ views:
           yellow: 20
           red: 0
 
-      - type: entities
-        title: HACS
-        show_header_toggle: false
-        entities:
-          - sensor.hacs
-
       - type: weather-forecast
         entity: weather.smhi_skurup
 
       - type: history-graph
         title: 'Temperatures'
-        hours_to_show: 144
+        hours_to_show: 72
         refresh_interval: 600
         entities:
-          - sensor.temperature_158d0001c2c4e4
-          - sensor.temperature_158d000201d362
-          - sensor.temperature_158d0001c1c07a
-          - sensor.temperature_158d0001c2c54c
+          - sensor.temperatur_vardagsrum
+          - sensor.temperatur_forrad
+          - sensor.temperatur_uterum
+          - sensor.temperatur_sovrum
 
       - type: vertical-stack
         cards:
@@ -246,15 +251,14 @@ views:
           - automation.hass_new_device_tracked
           - automation.hass_started
           - automation.hass_updater
-          - automation.ifttt_trigger_automation
           - automation.renew_ssl_cert
           - automation.slack_ljus_vid_01_00
-          - automation.slack_ljus_vid_20_00
+          - automation.slack_ljus_vid_07_00
           - automation.slack_ljus_vid_midnatt
-          - automation.nattlampa_xaoimi_gateway_rgb
           - automation.ssl_expiry_notification
-          - automation.slack_xaoimi_gateway_rgb
-          - automation.tand_ljus_vid_19_30
+          - automation.tand_ljus_60_min_innan_solnedgang
+          - automation.tand_ljus_vid_19_15
+          - automation.tand_tv_rum
 
   - title: Batteries
     icon: mdi:battery-charging-40
@@ -265,12 +269,12 @@ views:
         title: Batteries
         show_header_toggle: false
         entities:
-          - sensor.door1_battery
-          - sensor.door2_battery
-          - sensor.button1_battery
-          - sensor.button2_battery
-          - sensor.button3_battery
-          - sensor.forrad_temp_battery
-          - sensor.sovrum_temp_battery
-          - sensor.uterum_temp_battery
-          - sensor.vardagsrum_temp_battery
+          - sensor.openclose_dorr1_battery_level
+          - sensor.openclose_dorr2_battery_level
+          - sensor.switch_c41c_battery_level
+          - sensor.switch_12ef_battery_level
+          - sensor.switch_6f95_battery_level
+          - sensor.temperatur_forrad_battery_level
+          - sensor.temperatur_sovrum_battery_level
+          - sensor.temperatur_uterum_battery_level
+          - sensor.temperatur_vardagsrum_battery_level
